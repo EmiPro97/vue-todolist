@@ -67,7 +67,7 @@ body{
 
 .btn:hover,
 .btn:focus{
-    color: rgba(238, 0, 119, 1);
+    color: rgb(238, 0, 119);
     background-color: #4beefa;
 }
 
@@ -98,9 +98,19 @@ h1{
 
 
 /* List elements */
+.toDo-list::-webkit-scrollbar{
+    width: 5px;
+}
+
+.toDo-list::-webkit-scrollbar-thumb:vertical{
+    background-color: rgba(238, 0, 119, 0.5);
+}
+
 .toDo-list{
     max-height: 350px;
     overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(238, 0, 119, 0.5) transparent;
 }
 
 .toDo-list li{
