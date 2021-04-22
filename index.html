@@ -47,14 +47,20 @@
                             <span class="text"
                                 :class="{completed: todo.completed}"
                                 @click="updateCompletedKey(index)"
+                                v-show="!todo.visibility"
                             >
                                 {{todo.text}}
                             </span>
+                            <div v-show="todo.visibility" class="edit-modal">
+                                <input type="text" v-model.trim="editTask.text" ref="editMode">
+                                <i @click="updateTask(index)" class="fas fa-save"></i>
+                            </div>
                             <div>
                                 <i class="fas fa-check" 
-                                    @click="updateCompletedKey(index)"
-                                    :class="{done: todo.completed}"
+                                @click="updateCompletedKey(index)"
+                                :class="{done: todo.completed}"
                                 ></i>
+                                <i class="fas fa-pen" :class="{done: todo.visibility}" @click="showEdit(index)"></i>
                                 <i class="fas fa-trash-alt" @click="removeTask(index)"></i>
                             </div>    
                         </li>

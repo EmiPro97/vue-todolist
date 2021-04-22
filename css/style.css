@@ -126,14 +126,35 @@ h1{
     transition: opacity 0.4s;
 }
 
+.edit-modal{
+    flex-grow: 1;
+}
+
+.edit-modal input{
+    width: 92%;
+    font-size: 16px;
+    color: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.edit-modal i{
+    font-size: 16px;
+}
+
 .toDo-list li i{
     opacity: 0.5;
     cursor: pointer;
     transition: opacity 0.4s;
 }
 
-.toDo-list li i:first-child{
+.toDo-list li i{
     margin-right: 5px;
+}
+
+.toDo-list li i:last-child{
+    margin-right: 0;
 }
 
 .toDo-list li i.done{
