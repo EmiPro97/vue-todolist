@@ -32,15 +32,18 @@
             <main>
                 <!-- Add element -->
                 <section class="add">
-                    <input type="text" class="add-to-list" placeholder="Inserisci una task">
-                    <button class="btn">Add Task</button>
+                    <input type="text" class="add-to-list" placeholder="Inserisci una task"
+                        v-model.trim="newTask"
+                        @keyup.enter="addTask"
+                    >
+                    <button class="btn" @click="addTask">Add Task</button>
                 </section>
                 
                 <!-- List -->
                 <section class="todo-container">
                     <ul class="toDo-list">
-                        <li>
-                            <span class="text"></span>
+                        <li v-for="todo in todos">
+                            <span class="text">{{todo.text}}</span>
                             <div>
                                 <i class="fas fa-check"></i>
                                 <i class="fas fa-trash-alt"></i>
