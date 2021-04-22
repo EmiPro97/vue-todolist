@@ -39,8 +39,8 @@ body{
 }
 
 /* Text */
-.line-through{
-    text-decoration: line-through;
+.completed{
+    opacity: 0.5;
 }
 
 
@@ -123,6 +123,7 @@ h1{
     max-width: 80%;
     word-wrap: break-word;
     cursor: pointer;
+    transition: opacity 0.4s;
 }
 
 .toDo-list li i{
@@ -135,6 +136,10 @@ h1{
     margin-right: 5px;
 }
 
+.toDo-list li i.done{
+    opacity: 1; 
+}
+
 .toDo-list li i:hover{
-    opacity: 1
+    opacity: 1;
 }

@@ -35,21 +35,31 @@
                     <input type="text" class="add-to-list" placeholder="Inserisci una task"
                         v-model.trim="newTask"
                         @keyup.enter="addTask"
+                        ref="addInput"
                     >
                     <button class="btn" @click="addTask">Add Task</button>
                 </section>
                 
                 <!-- List -->
                 <section class="todo-container">
-                    <ul class="toDo-list">
-                        <li v-for="todo in todos">
-                            <span class="text">{{todo.text}}</span>
+                    <ul class="toDo-list" v-if="todos.length > 0">
+                        <li v-for="(todo, index) in todos">
+                            <span class="text"
+                                :class="{completed: todo.completed}"
+                                @click="updateCompletedKey(index)"
+                            >
+                                {{todo.text}}
+                            </span>
                             <div>
-                                <i class="fas fa-check"></i>
-                                <i class="fas fa-trash-alt"></i>
+                                <i class="fas fa-check" 
+                                    @click="updateCompletedKey(index)"
+                                    :class="{done: todo.completed}"
+                                ></i>
+                                <i class="fas fa-trash-alt" @click="removeTask(index)"></i>
                             </div>    
                         </li>
                     </ul>
+                    <h3 v-else>Non ci sono tasks al momento</h3>
                 </section>
             </main>
         </div>

@@ -7,9 +7,8 @@ const app = new Vue({
             {text: 'Seguire la lezione', completed: false,},
             {text: 'Punchare Checco', completed: false,},
         ],
+        newTask: '',
     },
-
-    newTask: '',
 
     methods: {
         // Add a new task
@@ -20,7 +19,18 @@ const app = new Vue({
 
                 // Reset
                 this.newTask = '';
+                this.$refs.addInput.focus();
             }
+        },
+
+        // Remove selected task
+        removeTask(index) {
+            this.todos.splice(index, 1);
+        },
+
+        // Update completed key status
+        updateCompletedKey(index) {
+            this.todos[index].completed = !this.todos[index].completed;
         },
     },
 });
