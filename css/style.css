@@ -138,6 +138,7 @@ h1{
 
 .edit-modal{
     flex-grow: 1;
+    margin-right: 5px;
 }
 
 .edit-modal input{
