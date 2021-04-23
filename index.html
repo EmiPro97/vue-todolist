@@ -52,7 +52,7 @@
                                 {{todo.text}}
                             </span>
                             <div v-show="todo.visibility" class="edit-modal">
-                                <input type="text" v-model.trim="editTask.text" ref="editMode">
+                                <input type="text" v-model.trim="editTask.text" ref="editFocus">
                                 <i @click="updateTask(index)" class="fas fa-save"></i>
                             </div>
                             <div>
